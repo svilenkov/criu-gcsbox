@@ -1,0 +1,20 @@
+run:
+  params:
+    -C cluster0.has_arm_v9-4: "1"
+    -C cluster0.has_arm_v8-4: "1"
+    -C cluster0.has_branch_target_exception: "1"
+    -C cluster0.has_gcs: "1"
+    -C cluster0.has_chkfeat: "1"
+    -C cluster0.has_permission_indirection_s1: "1"
+      #-C bp.hostbridge.userNetworking: "1"
+      #-C bp.hostbridge.userNetPorts: "127.0.0.1:8022=22"
+    -C bp.virtio_net.enabled: 1
+    -C bp.virtio_net.hostbridge.userNetworking: 1
+    -C bp.virtio_net.hostbridge.userNetPorts: "2222=22"
+    -C bp.smsc_91c111.enabled: 0
+    -C bp.flashloader0.fname: /home/svil/.shrinkwrap/package/ns-edk2/fip.bin
+    -C bp.secureflashloader.fname: /home/svil/.shrinkwrap/package/ns-edk2/bl1.bin
+    -C bp.flashloader1.fname: ""
+    -C bp.virtioblockdevice.transport: modern
+    -C bp.virtioblockdevice.read_only: 0
+      #    -C cluster0.gicv3.cpuintf-mmap-access-level: 2
