@@ -1,0 +1,23 @@
+diff --git a/config/ns-edk2-base.yaml b/config/ns-edk2-base.yaml
+index 452fcec..7898571 100644
+--- a/config/ns-edk2-base.yaml
++++ b/config/ns-edk2-base.yaml
+@@ -41,6 +41,10 @@ run:
+       type: path
+       value: ''
+ 
++    INITRD:
++      type: path
++      value: ''
++
+     SHARE:
+       type: path
+       value: ''
+@@ -68,6 +72,7 @@ run:
+     - function finish { rm -rf $$SEMIHOSTDIR; }
+     - trap finish EXIT
+     - cp ${rtvar:KERNEL} $${SEMIHOSTDIR}/Image
++    - cp ${rtvar:INITRD} $${SEMIHOSTDIR}/initrd.img
+     - cp ${rtvar:DTB} $${SEMIHOSTDIR}/fdt.dtb
+     - cat <<EOF > $${SEMIHOSTDIR}/startup.nsh
+     - Image dtb=fdt.dtb ${rtvar:CMDLINE}
